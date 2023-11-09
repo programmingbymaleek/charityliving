@@ -1,12 +1,17 @@
 {
   "files": {
-    "main.js": "/charityliving/static/js/main.fc92c1b9.js",
+    "main.css": "/charityliving/static/css/main.fe6f7612.css",
+    "main.js": "/charityliving/static/js/main.1c502a2b.js",
     "static/js/787.bf105d74.chunk.js": "/charityliving/static/js/787.bf105d74.chunk.js",
+    "static/media/food2.jpg": "/charityliving/static/media/food2.15acb122e2c35ac310a3.jpg",
+    "static/media/statistics.svg": "/charityliving/static/media/statistics.dc29e644b075ddee54998f3bbc656de8.svg",
     "index.html": "/charityliving/index.html",
-    "main.fc92c1b9.js.map": "/charityliving/static/js/main.fc92c1b9.js.map",
+    "main.fe6f7612.css.map": "/charityliving/static/css/main.fe6f7612.css.map",
+    "main.1c502a2b.js.map": "/charityliving/static/js/main.1c502a2b.js.map",
     "787.bf105d74.chunk.js.map": "/charityliving/static/js/787.bf105d74.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.fc92c1b9.js"
+    "static/css/main.fe6f7612.css",
+    "static/js/main.1c502a2b.js"
   ]
 }
