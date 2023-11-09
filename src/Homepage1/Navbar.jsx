@@ -48,21 +48,21 @@ const Navdiv = styled.div`
     flex-direction: row;
     list-style-type: none;
     align-items: center;
-    width: 100%;
-    justify-content: center;
+    width: 80%;
+    justify-content: space-between;
     align-items: center;
     color: white;
     height: 4rem;
     background: transparent;
     text-transform: uppercase;
     font-size: .7rem;
-    gap: 8rem; 
 `
 
 const Subnav = styled.div`
     display: flex;
     flex-direction: row;
     width: fit-content;
+    gap: 2rem;
 `
 
 const Ul = styled.ul`
@@ -70,6 +70,7 @@ const Ul = styled.ul`
     flex-direction: row;
     list-style-type: none;
     gap: 1rem;
+    padding: 0;
 `
 
 const Button = styled.li`

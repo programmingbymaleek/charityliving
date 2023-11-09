@@ -3,6 +3,7 @@ import Navbar from './Navbar'
 import './Homepage.sass'
 import dummy from "../assets/statistics.svg"
 import dummy2 from "../assets/food2.jpg"
+import Footer from './Footer'
 
 const Homepage = () => {
   return (
@@ -171,6 +172,7 @@ const Homepage = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   )
 }
