@@ -22,7 +22,7 @@ const Footer = () => {
                                 type="text"
                                 placeholder='Last Name'
                             />
-                            <InputBox
+                            <InputBox 
                                 type="email"
                                 placeholder='Email'
                             />
