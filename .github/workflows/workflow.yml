@@ -2,7 +2,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy to gh-pages
         run: |
           git config user.name "programmingbymaleek"
           git config user.email "your.email@example.com"
