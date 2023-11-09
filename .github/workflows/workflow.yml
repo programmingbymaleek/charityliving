@@ -1,7 +1,22 @@
-- name: Deploy to GitHub Pages
-  run: |
-    git config user.name "Your Name"
-    git config user.email "your.email@example.com"
-    git add .
-    git commit -m "file modification"
-    git push
+on:
+  push:
+    branches:
+      - main
+      - gh-pages
+      - feature/*
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2 # This step checks out your code from the repository
+      - name: Set up Git
+        run: |
+          git config user.name "wisdom"
+          git config user.email "your.email@example.com"
+      - name: Commit and push changes
+        run: |
+          git add .
+          git commit -m "file modification"
+          git push
