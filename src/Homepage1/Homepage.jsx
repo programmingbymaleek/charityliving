@@ -4,11 +4,6 @@ import './Homepage.sass'
 import dummy from "../assets/statistics.svg"
 import dummy2 from "../assets/food2.jpg"
 import Footer from './Footer'
-import React from "react";
-import Navbar from "./Navbar";
-import "./Homepage.sass";
-import dummy from "../assets/statistics.svg";
-import dummy2 from "../assets/food2.jpg";
 
 const Homepage = () => {
   return (

@@ -104,10 +104,12 @@ const Footer = () => {
                         <CharityIcon src={dummy} alt='social_icons' />
                     </CharityIcons>
                 </FooterCharity>
-                <div>
+                <CharityExp>
                     (c) 2023 | charity: water Donation Processing Center, PO Box 5026, Hagerstown, MD 21741-5026 | 1
-                    Devonshire St, London W1W 5DR | Charity Global, Inc, a US 501
-                </div>
+                    Devonshire St, London W1W 5DR | Charity Global, Inc, a US 501 (c)(3) public charity, EIN 22-3936753 and an ANBI
+                    in the Netherlands, RSIN 826151656. Charity Global UK Limited is a dual-qualified charity registered in
+                    England and Wales, charity number 1169228. Charity Global UK Limited is wholly owned by Charity Global, Inc.
+                </CharityExp>
             </FooterContainer>
         </Thefooter>
     )
@@ -260,4 +262,9 @@ const CharityIcons = styled.div`
 `
 const CharityIcon = styled.img`
     width: 2rem;
+`
+const CharityExp = styled.div`
+    color: grey;
+    font-size: .8rem;
+    padding: 1rem 0;
 `
