@@ -1,11 +1,12 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 import styled from 'styled-components'
 
-const Navbar = () => {
+const Navbar = ({left, right, transparent}) => {
     return (
         <Navdiv>
-            <Subnav className='left_nav'>
+            <Rightnav color={left}>
                 <Ul>
                     <li>logo</li>
                 </Ul>
@@ -24,16 +25,16 @@ const Navbar = () => {
                     </li>
                     <li>Why water?</li>
                 </Ul>
-            </Subnav>
-            <Subnav className='right_nav'>
+            </Rightnav>
+            <Leftnav color={right}>
                 <Ul>
                     <Button>Give</Button>
-                    <Button>Join the springs</Button>
+                    <ButtonJoin color={transparent}>Join the springs</ButtonJoin>
                 </Ul>
                 <Ul>
-                    <SignInButton>Sign in</SignInButton>
+                    <SignInButton><Link to='/signin' className='pick_user' >Sign in</Link></SignInButton>
                 </Ul>
-            </Subnav>
+            </Leftnav>
 
         </Navdiv>
     )
@@ -47,24 +48,29 @@ const Navdiv = styled.div`
     display: flex;
     flex-direction: row;
     list-style-type: none;
-    align-items: center;
     width: 80%;
     justify-content: space-between;
     align-items: center;
-    color: white;
     height: 4rem;
     background: transparent;
     text-transform: uppercase;
     font-size: .7rem;
 `
 
-const Subnav = styled.div`
+const Rightnav = styled.div`
     display: flex;
     flex-direction: row;
     width: fit-content;
     gap: 2rem;
+    color: ${props => props.color};
 `
-
+const Leftnav = styled.div`
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    gap: 2rem;
+    color: ${props => props.color};
+`
 const Ul = styled.ul`
     display: flex;
     flex-direction: row;
@@ -76,8 +82,17 @@ const Ul = styled.ul`
 const Button = styled.li`
   background: transparent;
   border-radius: 3px;
-  border: 1px solid white;
-  color: white;
+  border: 1px solid ${props => props.color};
+  color: ${props => props.color};
+  margin: 0 1em;
+  padding: 0.5rem 1.5rem;
+`
+
+const ButtonJoin = styled.li`
+  background: ${props => props.color};
+  border-radius: 3px;
+  border: 1px solid ${props => props.color};
+  color: ${props => props.color};
   margin: 0 1em;
   padding: 0.5rem 1.5rem;
 `
@@ -85,11 +100,15 @@ const Button = styled.li`
 const SelectField = styled.select`
   background: transparent;
   border: none;
-  color: white;
+  color: inherit;
   text-transform: uppercase
 `
 
 const SignInButton = styled.li`
-    border-left: 1px solid white;
-    padding: 0 2rem
+    border-left: 1px solid ${props => props.color};
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 `

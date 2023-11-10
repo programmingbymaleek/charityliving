@@ -5,14 +5,14 @@ import dummy from "../assets/statistics.svg"
 
 const Footer = () => {
     return (
-        <Thefooter className='footer'>
-            <FooterContainer className='footer_container'>
-                <FooterForm className='footer_form'>
-                    <FooterText className='footer_text'>
-                        <FooterHeading className='footer_heading'>Add impact to your inbox</FooterHeading>
+        <Thefooter>
+            <FooterContainer>
+                <FooterForm >
+                    <FooterText>
+                        <FooterHeading>Add impact to your inbox</FooterHeading>
                         <div className='footer_email'>Get our emails t stay in the know</div>
                     </FooterText>
-                    <TheForm className='the_form'>
+                    <TheForm>
                         <MainForm>
                             <InputBox
                                 type="text"

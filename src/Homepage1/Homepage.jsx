@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
-import './Homepage.sass'
+import './Homepage.scss'
 import dummy from "../assets/statistics.svg"
 import dummy2 from "../assets/food2.jpg"
 import Footer from './Footer'
@@ -9,7 +9,7 @@ const Homepage = () => {
   return (
     <div className="homepage1">
       <div className="homepage_header">
-        <Navbar />
+        <Navbar left="white" right="white" background="transparent" signin="white"/>
         <div className="home_head_section">
           <div className="left_head">
             <div className="the_head">
