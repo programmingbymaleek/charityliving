@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import styled from 'styled-components'
 
-const Navbar = ({left, right, transparent}) => {
+const Navbar = ({left, right, background}) => {
     return (
         <Navdiv>
             <Rightnav color={left}>
@@ -29,7 +29,7 @@ const Navbar = ({left, right, transparent}) => {
             <Leftnav color={right}>
                 <Ul>
                     <Button>Give</Button>
-                    <ButtonJoin color={transparent}>Join the springs</ButtonJoin>
+                    <ButtonJoin color={background} color2={right}>Join the springs</ButtonJoin>
                 </Ul>
                 <Ul>
                     <SignInButton><Link to='/signin' className='pick_user' >Sign in</Link></SignInButton>
@@ -50,6 +50,7 @@ const Navdiv = styled.div`
     list-style-type: none;
     width: 80%;
     justify-content: space-between;
+    color: white;
     align-items: center;
     height: 4rem;
     background: transparent;
@@ -91,8 +92,8 @@ const Button = styled.li`
 const ButtonJoin = styled.li`
   background: ${props => props.color};
   border-radius: 3px;
-  border: 1px solid ${props => props.color};
-  color: ${props => props.color};
+  border: 1px solid ${props => props.color2};
+  color: initial;
   margin: 0 1em;
   padding: 0.5rem 1.5rem;
 `
