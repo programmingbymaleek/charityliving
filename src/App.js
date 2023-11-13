@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css'
 import "./index.css"
 import Homepage from './Homepage1/Homepage';
+import { GlobalStyles } from './StyledComponents/GlobalStyles';
 
 const Signin = lazy(() => import('./SigninPage/Signin'));
 
@@ -22,6 +23,9 @@ function App() {
           </Routes>
         </>
       </BrowserRouter>
+      <div>
+        <GlobalStyles/>
+      </div>
     </>
   )
 }

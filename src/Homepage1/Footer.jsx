@@ -126,6 +126,10 @@ const Thefooter = styled.div`
     justify-content: space-between;
     align-items: center;
     font-size: .9rem;
+
+    @media screen and (max-width: 1086px) {
+        width: 90%;
+     }
 `
 const FooterContainer = styled.div`
     width: 100%;

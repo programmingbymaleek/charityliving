@@ -56,6 +56,10 @@ const Navdiv = styled.div`
     background: transparent;
     text-transform: uppercase;
     font-size: .7rem;
+
+    @media screen and (max-width: 1086px) {
+        width: 90%;
+     }
 `
 
 const Rightnav = styled.div`
