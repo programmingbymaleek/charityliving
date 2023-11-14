@@ -43,10 +43,9 @@ export const auth = getAuth();
 const actionCodeSettings = {
   // URL you want to redirect back to. The domain (www.example.com) for this
   // URL must be in the authorized domains list in the Firebase Console.
-  url: "https://www.example.com/finishSignUp?cartId=1234",
+  url: "http://localhost:3000/login",
   // This must be true.
   handleCodeInApp: true,
-  dynamicLinkDomain: "example.page.link",
 };
 
 export const sendEmailLinkToUser = async (email) => {
@@ -84,6 +83,7 @@ export const handleEmailLinkVerification = () => {
     signInWithEmailLink(auth, email, window.location.href)
       .then((result) => {
         // Clear email from storage.
+        console.log(result);
         window.localStorage.removeItem("emailForSignIn");
         // You can access the new user via result.user
         // Additional user info profile not available via:
@@ -92,6 +92,9 @@ export const handleEmailLinkVerification = () => {
         // result.additionalUserInfo.isNewUser
       })
       .catch((error) => {
+        console.log(error.message);
+        console.log(error.code);
+
         // Some error occurred, you can inspect the code: error.code
         // Common errors could be invalid email and invalid or expired OTPs.
       });
