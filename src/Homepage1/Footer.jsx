@@ -144,12 +144,21 @@ const FooterForm = styled.div`
     align-items: center;
     width: 100%;
     justify-content: space-between;
+
+    @media screen and (max-width: 1086px) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .8rem;
+     }
 `
 const FooterText = styled.div`
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
     width: 30%;
+    @media screen and (max-width: 1086px) {
+        width: 100%
+     }
 `
 const FooterHeading = styled.div`
     font-size: .9rem;
@@ -171,6 +180,10 @@ const InputBox = styled.input`
     border-right: 0;
     color: grey;
     width: 11rem;
+
+    @media screen and (max-width: 1086px) {
+        width: 31%
+     }
 `
 const SubscribeButton = styled.input`
     height: 2.5rem;
@@ -179,7 +192,7 @@ const SubscribeButton = styled.input`
     text-transform: uppercase;
     color: white;
     font-weight: 600;
-    width: 7rem;
+    width: fit-content;
     border: none;
 `
 

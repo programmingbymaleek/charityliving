@@ -7,10 +7,28 @@ import Footer from './Footer'
 
 
 const Homepage = () => {
+  const style = {
+    left: "white", 
+    right: "white", 
+    siginborder: "white",
+    joincolor: "white",
+    signincolor: "white", 
+    joinborder: "white",
+    joinbackground: "transparent",
+    the_scroll: 80,
+
+    leftscroll: "white",
+    rightscroll: "white",
+    signinscroll: "white",
+    joincolorscroll: "white",
+    joinborderscroll: "white",
+    signincolorscroll: "white", 
+    siginborderscroll: "white",
+}
   return (
     <div className='homepage1'>
       <div className="homepage_header">
-        <Navbar left="white" right="white" background="transparent" signin="white" the_scroll={650}/>
+        <Navbar {...style}/>
         <div className="home_head_section">
           <div className="left_head">
             <div className="the_head">

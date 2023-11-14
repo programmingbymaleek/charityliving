@@ -1,0 +1,79 @@
+.overlay {
+  background: black;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+
+  .modal_header {
+    font-size: 1.8rem;
+    padding: 0 1.1rem ;
+  }
+
+  .close_modal_div{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+
+    .close_icon{
+        width: 1.7rem;
+        border-radius: 50px;
+        padding: .3rem;
+    }
+    .close_icon:hover{
+        background: rgba(0, 0, 255, 0.152);
+    }
+  }
+
+  .modal_form{
+    padding: 0 1.1rem 1.1rem;
+  }
+  .signin_email_container {
+    background: white;
+    padding: .9rem;
+    width: 45%;
+
+    label {
+      display: flex;
+      flex-direction: column;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 0.4rem;
+      margin: .5rem 0 1rem;
+    }
+    input {
+      width: 100%;
+      height: 2.8rem;
+      color: #d9d9e0;
+      background: white;
+      border: 1px solid #e3e5e5;
+      padding: 0 0.6rem;
+      border-radius: 3px;
+    }
+    .submit_the_form{
+        margin-top: .5rem;
+        background: #0C3763;
+        color: white;
+        text-transform: uppercase;
+        font-weight: 600;
+        cursor: pointer;
+    }
+  }
+}
+.open_modal{
+    display: flex;
+}

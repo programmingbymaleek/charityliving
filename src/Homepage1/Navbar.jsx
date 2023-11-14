@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import styled from 'styled-components'
 
-const Navbar = ({ left, leftscroll, right, rightscroll, signincolor, joincolor, signincolorscroll, signinscroll, siginborder, joinbackground, the_scroll }) => {
+const Navbar = ({ left, leftscroll, right, rightscroll, signincolor, joincolor, joincolorscroll, joinborderscroll, signincolorscroll, signinscroll, siginborder, siginborderscroll, joinborder, joinbackground, the_scroll }) => {
 
     const [scroll, setScroll] = useState(false);
 
@@ -42,10 +42,10 @@ const Navbar = ({ left, leftscroll, right, rightscroll, signincolor, joincolor, 
             <Rightnav right={right} scroll={scroll} rightscroll={rightscroll}>
                 <Ul>
                     <Button>Give</Button>
-                    <ButtonJoin joinbackground={joinbackground} joincolor={joincolor} scroll={scroll}>Join the springs</ButtonJoin>
+                    <ButtonJoin joinbackground={joinbackground} joincolor={joincolor} scroll={scroll} joinborder={joinborder} joinborderscroll={joinborderscroll} joincolorscroll={joincolorscroll} >Join the springs</ButtonJoin>
                 </Ul>
                 <Ul>
-                    <Link to='/signin' className='pick_user' ><SignInButton scroll={scroll}>Sign in</SignInButton></Link>
+                    <Link to='/signin' className='pick_user' ><SignInButton scroll={scroll} siginborder={siginborder} siginborderscroll={siginborderscroll} signincolorscroll={signincolorscroll} signincolor={signincolor}>Sign in</SignInButton></Link>
                 </Ul>
             </Rightnav>
 
@@ -67,14 +67,15 @@ const Navdiv = styled.div`
     color: white;
     align-items: center;
     height: 4rem;
-    background: ${props => (props.scroll ? "#0000000d" : 'transparent')};;
+    background: ${props => (props.scroll ? "#332620" : 'transparent')};
     text-transform: uppercase;
     font-size: .7rem;
     position: fixed;
     z-index: 1000;
 
     @media screen and (max-width: 1086px) {
-        width: 90%;
+        padding: 0 5%;
+
      }
 `
 
@@ -115,10 +116,17 @@ const Button = styled.li`
 const ButtonJoin = styled.li`
   background: ${props => props.joinbackground};
   border-radius: 3px;
-  border: 1px solid ${props => (props.scroll ? "black" : props.color2)};
-  color: ${props => (props.joincolor)};
+  border: 1px solid ${props => (props.scroll ? props => props.joinborderscroll : props.joinborder)};
+  color: ${props => (props.scroll ? props => props.joincolorscroll : props.joincolor)};
   padding: 0.5rem 1.5rem;
 `
+// pop up
+// email
+// password
+// signin button with email and passsword
+
+// create account or signin
+// create account with google name, password, confirm, email(popup)
 
 const SelectField = styled.select`
   background: transparent;
@@ -128,13 +136,12 @@ const SelectField = styled.select`
 `
 
 const SignInButton = styled.li`
-    border-left: 1px solid ${props => props.color};
-    padding: 0 2rem;
+    border-left: 1px solid ${props => (props.scroll ? props => props.siginborderscroll : props.siginborder)};
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    color: ${props => (props.scroll ? "black" : "initial")};
-    padding: 0.5rem 2rem;
+    color: ${props => (props.scroll ? props => props.signincolorscroll : props.signincolor)};
+    padding: 0.5rem 0 0.5 2rem;
     text-decoration: none;
 `

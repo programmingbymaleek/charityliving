@@ -515,6 +515,7 @@ $breakpoints: (
                         color: #1C4265;
                         padding: 2rem 0 0;
                         font-weight: 600;
+                        
                     }
                 }
             }
@@ -527,7 +528,38 @@ $breakpoints: (
     .home_head_section{
         width: 90%;
         justify-content: space-between;
+        flex-direction: column!important;
         gap: 0;
+
+        .right_head{
+            width: 50%!important;
+        }
+        .left_head{
+            width: 80%!important;
+        }
+    }
+    .our_work_section{
+
+        .work_heading{
+            width: 100%!important;
+        }
+        .work_text{
+            width: 100%!important;
+        }
+        .work_numbers{
+            width: 70%!important;
+
+            .dummy_icon{
+                width: 5rem!important;
+            }
+        }
+    }
+    .spring_grid_image{
+        grid-template-columns: 46% 8% 46%!important;
+        grid-template-rows: 2rem 24rem 2rem 2rem 12rem!important;
+    }
+    .story_section{
+        width: 28%!important;
     }
  }
 
