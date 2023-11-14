@@ -10,7 +10,7 @@ const Homepage = () => {
   return (
     <div className='homepage1'>
       <div className="homepage_header">
-        <Navbar left="white" right="white" background="transparent" signin="white"/>
+        <Navbar left="white" right="white" background="transparent" signin="white" the_scroll={650}/>
         <div className="home_head_section">
           <div className="left_head">
             <div className="the_head">

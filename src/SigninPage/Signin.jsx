@@ -7,9 +7,22 @@ import dummy2 from "../assets/food2.jpg"
 import "./Signin.scss"
 
 const Signin = () => {
+    const style = {
+        left: "black", 
+        leftscroll: "white",
+        right: "#0C3763", 
+        rightscroll: "white",
+        signincolor: "black", 
+        signinscroll: "white",
+        signincolorscroll: "black", 
+        siginborder: "transparent",
+        joincolor: "white",
+        joinbackground: "#0C3763",
+        the_scroll: 720,
+    }
     return (
         <div className='sigin_page'>
-            <Navbar left="black" right="#0C3763" background="#0C3763" signin="black" />
+            <Navbar {...style}/>
             <div className='signin_container'>
                 <div className='signin_header'>
                     <div className='signin_big_heading'>Sign into your account</div>
@@ -40,8 +53,8 @@ const Signin = () => {
                         <span className='sigin_options'>or sign in below</span>
                         <hr />
                     </div>
-                    <input type="submit" value="Sign in with facebook" className='facebook_signin'/>
-                    <input type="submit" value="Sign in with email" className='email_signin'/>
+                    <input type="submit" value="Sign in with facebook" className='facebook_signin' />
+                    <input type="submit" value="Sign in with email" className='email_signin' />
                     <div className='other_signin_options'>
                         <span className='forgot_password'>Forgot password?</span>
                         <span className='form_create_account'>Create an account</span>
@@ -49,9 +62,9 @@ const Signin = () => {
                 </div>
             </div>
             <div className='signin_images'>
-                <img src={dummy2} alt='signin_image'/>
-                <img src={dummy2} alt='signin_image'/>
-                <img src={dummy2} alt='signin_image'/>
+                <img src={dummy2} alt='signin_image' />
+                <img src={dummy2} alt='signin_image' />
+                <img src={dummy2} alt='signin_image' />
             </div>
             <Footer />
         </div>

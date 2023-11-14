@@ -1,12 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
 
 import styled from 'styled-components'
 
-const Navbar = ({left, right, background}) => {
+const Navbar = ({ left, leftscroll, right, rightscroll, signincolor, joincolor, signincolorscroll, signinscroll, siginborder, joinbackground, the_scroll }) => {
+
+    const [scroll, setScroll] = useState(false);
+
+    const handleScroll = () => {
+        if (window.scrollY > the_scroll) {
+            setScroll(true);
+        } else {
+            setScroll(false);
+        }
+    };
+    window.onscroll = handleScroll;
+
+
     return (
-        <Navdiv>
-            <Rightnav color={left}>
+        <Navdiv scroll={scroll}>
+            <Leftnav left={left} scroll={scroll} leftscroll={leftscroll}>
                 <Ul>
                     <li>logo</li>
                 </Ul>
@@ -25,16 +38,16 @@ const Navbar = ({left, right, background}) => {
                     </li>
                     <li>Why water?</li>
                 </Ul>
-            </Rightnav>
-            <Leftnav color={right}>
+            </Leftnav>
+            <Rightnav right={right} scroll={scroll} rightscroll={rightscroll}>
                 <Ul>
                     <Button>Give</Button>
-                    <ButtonJoin color={background} color2={right}>Join the springs</ButtonJoin>
+                    <ButtonJoin joinbackground={joinbackground} joincolor={joincolor} scroll={scroll}>Join the springs</ButtonJoin>
                 </Ul>
                 <Ul>
-                    <SignInButton><Link to='/signin' className='pick_user' >Sign in</Link></SignInButton>
+                    <Link to='/signin' className='pick_user' ><SignInButton scroll={scroll}>Sign in</SignInButton></Link>
                 </Ul>
-            </Leftnav>
+            </Rightnav>
 
         </Navdiv>
     )
@@ -48,33 +61,39 @@ const Navdiv = styled.div`
     display: flex;
     flex-direction: row;
     list-style-type: none;
-    width: 80%;
+    width: 100%;
+    padding: 0 10%;
     justify-content: space-between;
     color: white;
     align-items: center;
     height: 4rem;
-    background: transparent;
+    background: ${props => (props.scroll ? "#0000000d" : 'transparent')};;
     text-transform: uppercase;
     font-size: .7rem;
+    position: fixed;
+    z-index: 1000;
 
     @media screen and (max-width: 1086px) {
         width: 90%;
      }
 `
 
-const Rightnav = styled.div`
-    display: flex;
-    flex-direction: row;
-    width: fit-content;
-    gap: 2rem;
-    color: ${props => props.color};
-`
 const Leftnav = styled.div`
     display: flex;
     flex-direction: row;
     width: fit-content;
     gap: 2rem;
-    color: ${props => props.color};
+    color: ${props => (props.scroll ? props => props.leftscroll : props.left)};
+    align-items: center;
+    justify-content: center;
+`
+const Rightnav = styled.div`
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    gap: 2rem;
+    color: ${props => (props.scroll ? props => props.rightscroll : props.right)};
+    align-items: center;
 `
 const Ul = styled.ul`
     display: flex;
@@ -82,23 +101,22 @@ const Ul = styled.ul`
     list-style-type: none;
     gap: 1rem;
     padding: 0;
+    margin: 0;
 `
 
 const Button = styled.li`
   background: transparent;
   border-radius: 3px;
   border: 1px solid ${props => props.color};
-  color: ${props => props.color};
-  margin: 0 1em;
+  color: ${props => (props.scroll ? "black" : props => props.color)};
   padding: 0.5rem 1.5rem;
 `
 
 const ButtonJoin = styled.li`
-  background: ${props => props.color};
+  background: ${props => props.joinbackground};
   border-radius: 3px;
-  border: 1px solid ${props => props.color2};
-  color: initial;
-  margin: 0 1em;
+  border: 1px solid ${props => (props.scroll ? "black" : props.color2)};
+  color: ${props => (props.joincolor)};
   padding: 0.5rem 1.5rem;
 `
 
@@ -116,4 +134,7 @@ const SignInButton = styled.li`
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    color: ${props => (props.scroll ? "black" : "initial")};
+    padding: 0.5rem 2rem;
+    text-decoration: none;
 `
