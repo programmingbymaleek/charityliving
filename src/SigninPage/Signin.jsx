@@ -3,16 +3,16 @@ import React, { useContext } from 'react'
 import Footer from '../Homepage1/Footer'
 import Navbar from '../Homepage1/Navbar'
 import { Context } from '../Utilities/Context'
+import Form from '../Utilities/Form'
 
 import dummy2 from "../assets/food2.jpg"
 
 import "./Signin.scss"
-import SigninModal from './SigninModal'
-import CreateAccountModal from './CreateAccountModal'
 
 const Signin = () => {
-    let { setOpenSigninModal, openCreateAccountModal, setOpenSCreateAccountModal} = useContext(Context)
+    let { setOpenModal, setModalDetails} = useContext(Context)
 
+    // styles
     const style = {
         left: "black",
         right: "black",
@@ -31,6 +31,53 @@ const Signin = () => {
         signincolorscroll: "white",
         siginborderscroll: "white",
     }
+
+    //modal form details
+    const createAccountDets = {
+        heading: "Create an Account",
+        inputFields: [
+            {
+                value: "first_name",
+                label: "First Name",
+            },
+            {
+                value: "last_name",
+                label: "Last Name",
+            },
+            {
+                value: "email",
+                label: "Email",
+            },
+            {
+                value: "password",
+                label: "Password",
+            },
+            {
+                value: "password",
+                label: "Confirm Password",
+            },
+        ]
+    }
+
+    const signinDets = {
+        heading: "Sign In",
+        inputFields: [
+            {
+                value: "email",
+                label: "Email",
+            },
+            {
+                value: "password",
+                label: "Password",
+            }
+        ]
+    }
+
+    const openTheModal = (data) => {
+        setOpenModal(true)
+        setModalDetails(data)
+    }
+
     return (
         <div className='sigin_page'>
             <Navbar {...style} />
@@ -65,9 +112,9 @@ const Signin = () => {
                         <hr />
                     </div>
                     <input type="submit" value="Sign in with google" className='facebook_signin' />
-                    <input type="submit" value="Sign in with email and passsword" className='email_signin' onClick={()=>setOpenSigninModal(true)}/>
+                    <input type="submit" value="Sign in with email and passsword" className='email_signin' onClick={()=>openTheModal(signinDets)}/>
                     <div className='other_signin_options'>
-                        <span className='forgot_password' onClick={()=>setOpenSCreateAccountModal(true)}>Create an account?</span>
+                        <span className='forgot_password' onClick={()=>openTheModal(createAccountDets)}>Create an account?</span>
                         <span className='form_create_account'>Sign in</span>
                     </div>
                 </div>
@@ -78,8 +125,7 @@ const Signin = () => {
                 <img src={dummy2} alt='signin_image' />
             </div>
             <Footer />
-            <SigninModal/>
-            <CreateAccountModal/>
+            <Form/>
         </div>
     )
 }

@@ -12,10 +12,18 @@ const Signin = lazy(() => import('./SigninPage/Signin'));
 
 function App() {
 
-  let [openSigninModal, setOpenSigninModal] = useState(false)
-  let [openCreateAccountModal, setOpenSCreateAccountModal] = useState(false)
+  let [openModal, setOpenModal,] = useState(false)
+  let [modalDetails, setModalDetails] = useState({})
 
-  let providerValue = useMemo(() => ({ openSigninModal, setOpenSigninModal, openCreateAccountModal, setOpenSCreateAccountModal }), [openSigninModal, setOpenSigninModal, openCreateAccountModal, setOpenSCreateAccountModal])
+
+  let providerValue = useMemo(() => ({ 
+      openModal, setOpenModal,
+      modalDetails, setModalDetails
+    }), 
+    [
+      openModal, setOpenModal,     
+      modalDetails, setModalDetails
+    ])
 
   return (
     <>
