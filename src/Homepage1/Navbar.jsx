@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
 
 import styled from 'styled-components'
+import menu from "../assets/close.svg"
 
 const Navbar = ({ left, leftscroll, right, rightscroll, signincolor, joincolor, joincolorscroll, joinborderscroll, signincolorscroll, signinscroll, siginborder, siginborderscroll, joinborder, joinbackground, the_scroll }) => {
 
@@ -48,7 +49,8 @@ const Navbar = ({ left, leftscroll, right, rightscroll, signincolor, joincolor, 
                     <Link to='/signin' className='pick_user' ><SignInButton scroll={scroll} siginborder={siginborder} siginborderscroll={siginborderscroll} signincolorscroll={signincolorscroll} signincolor={signincolor}>Sign in</SignInButton></Link>
                 </Ul>
             </Rightnav>
-
+            <Hamburger src={menu} alt='menu'/>
+            
         </Navdiv>
     )
 }
@@ -74,8 +76,7 @@ const Navdiv = styled.div`
     z-index: 1000;
 
     @media screen and (max-width: 1086px) {
-        padding: 0 5%;
-
+        padding: 0 5%
      }
 `
 
@@ -103,6 +104,12 @@ const Ul = styled.ul`
     gap: 1rem;
     padding: 0;
     margin: 0;
+
+    @media screen and (max-width: 850px) {
+        &:nth-child(2){
+            display: none;
+        }
+    }
 `
 
 const Button = styled.li`
@@ -111,6 +118,11 @@ const Button = styled.li`
   border: 1px solid ${props => props.color};
   color: ${props => (props.scroll ? "black" : props => props.color)};
   padding: 0.5rem 1.5rem;
+
+  @media screen and (max-width: 850px) {
+        display: none;
+
+    }
 `
 
 const ButtonJoin = styled.li`
@@ -119,6 +131,10 @@ const ButtonJoin = styled.li`
   border: 1px solid ${props => (props.scroll ? props => props.joinborderscroll : props.joinborder)};
   color: ${props => (props.scroll ? props => props.joincolorscroll : props.joincolor)};
   padding: 0.5rem 1.5rem;
+
+  @media screen and (max-width: 850px) {
+    display: none;
+}
 `
 // pop up
 // email
@@ -142,6 +158,15 @@ const SignInButton = styled.li`
     justify-content: center;
     cursor: pointer;
     color: ${props => (props.scroll ? props => props.signincolorscroll : props.signincolor)};
-    padding: 0.5rem 0 0.5 2rem;
+    padding: 0.5rem 0 0.5rem 2rem;
     text-decoration: none;
+`
+
+const Hamburger = styled.img`
+    width: 1rem;
+    display: none;
+
+    @media screen and (max-width: 850px) {
+        display: block;
+    }
 `

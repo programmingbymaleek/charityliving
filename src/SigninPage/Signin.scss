@@ -1,9 +1,11 @@
+@import '../StyledComponents/breakpoints';
+
 .sigin_page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #f7f7f7;
-
+  background: #FFFFFF;
+  
   .signin_container {
     padding: 10rem 0 5rem;
     display: flex;
@@ -25,6 +27,17 @@
       text-align: center;
       padding: .8rem 0 1rem;
     }
+    @include respond-to('tablet')  {
+      width: 100%;
+
+      .signin_big_heading {
+        font-size: 1.8rem;
+      }
+      .signin_lil_heading {
+        width: 60%;
+        font-size: 0.8rem;
+      }
+    }
   }
   .sigin_form_container {
     display: flex;
@@ -36,6 +49,10 @@
     border: 1px solid #e3e5e5;
     border-radius: 3px;
     margin-top: 1rem;
+
+    @include respond-to('desktop')  {
+      width: 50vw;
+    }
 
     .sigin_form_text {
       width: 100%;
@@ -58,6 +75,10 @@
         flex-direction: column;
         width: 100%;
         gap: .3rem;
+
+        @include respond-to('tablet')  {
+          font-size: .7rem;
+        }
       }
       input {
         width: 100%;
@@ -85,6 +106,10 @@
       font-size: .8rem;
       color: #b7b7cc;
       padding: 1.5rem 0;
+
+      @include respond-to('tablet')  {
+        font-size: .7rem;
+      }
 
       hr{
         height: 1px;
@@ -142,7 +167,19 @@
       .form_create_account:hover, .forgot_password:hover{
         text-decoration: underline;
       }
+
+      @include respond-to('tablet')  {
+        font-size: .7rem;
+      }
     }
+    @include respond-to('tablet')  {
+      width: 60vw;
+
+      .sigin_form_text {
+        font-size: 0.8rem;
+      }
+    }
+
   }
   .signin_images{
     display: flex;
@@ -150,10 +187,20 @@
     height: 25rem;
     width: 100%;
     justify-content: space-between;
-    padding: 2rem 0 2.5rem;
+    padding: 2rem 0 4rem;
+
+    @include respond-to('desktop--lg'){
+      height: 20rem;
+    }
 
     img{
       width: 33%;
     }
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .sigin_form_container{
+    width: 70vw;
   }
 }
