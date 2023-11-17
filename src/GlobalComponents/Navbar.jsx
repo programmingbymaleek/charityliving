@@ -42,15 +42,15 @@ const Navbar = ({ left, leftscroll, right, rightscroll, signincolor, joincolor, 
             </Leftnav>
             <Rightnav right={right} scroll={scroll} rightscroll={rightscroll}>
                 <Ul>
-                    <Button>Give</Button>
+                    <Link to='/givepage' className='pick_user' ><Button>Give</Button></Link>
                     <ButtonJoin joinbackground={joinbackground} joincolor={joincolor} scroll={scroll} joinborder={joinborder} joinborderscroll={joinborderscroll} joincolorscroll={joincolorscroll} >Join the springs</ButtonJoin>
                 </Ul>
                 <Ul>
                     <Link to='/signin' className='pick_user' ><SignInButton scroll={scroll} siginborder={siginborder} siginborderscroll={siginborderscroll} signincolorscroll={signincolorscroll} signincolor={signincolor}>Sign in</SignInButton></Link>
                 </Ul>
             </Rightnav>
-            <Hamburger src={menu} alt='menu'/>
-            
+            <Hamburger src={menu} alt='menu' />
+
         </Navdiv>
     )
 }

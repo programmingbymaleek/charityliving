@@ -130,6 +130,9 @@ const Thefooter = styled.div`
     @media screen and (max-width: 1086px) {
         width: 90%;
      }
+     @media screen and (max-width: 768px) {
+        font-size: .8rem;
+      }
 `
 const FooterContainer = styled.div`
     width: 100%;
@@ -163,6 +166,9 @@ const FooterText = styled.div`
 const FooterHeading = styled.div`
     font-size: .9rem;
     font-weight: 600;
+    @media screen and (max-width: 768px) {
+        font-size: .8rem;
+      }
 `
 const TheForm = styled.div`
     display: flex;
@@ -200,6 +206,9 @@ const FormNote = styled.div`
     font-size: .8rem;
     padding: .5rem 0;
     color: grey;
+    @media screen and (max-width: 768px) {
+        font-size: .7rem;
+      }
 `
 
 const Lists = styled.ul`
@@ -254,6 +263,9 @@ const SelectCountry = styled.select`
 const Dot = styled.span`
     font-size: 2rem;
     line-height: .3rem;
+    @media screen and (max-width: 768px) {
+        font-size: 1.8rem;
+      }
 `
 const EmailLink = styled.span`
     font-weight: 600;
@@ -267,6 +279,9 @@ const FooterCharity = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    @media screen and (max-width: 768px) {
+        font-size: .7rem;
+      }
 `
 const CharityText = styled.div`
     display: flex;
@@ -284,4 +299,7 @@ const CharityExp = styled.div`
     color: grey;
     font-size: .8rem;
     padding: 1rem 0;
+    @media screen and (max-width: 768px) {
+        font-size: .7rem;
+      }
 `

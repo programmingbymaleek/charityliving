@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useContext } from 'react'
 
-import { Context } from './Context'
+import { Context } from '../Utilities/Context'
 
-import "../SigninPage/Modal.scss"
+import "../styles/Modal.scss"
 
 import close_icon from "../assets/close.svg"
 

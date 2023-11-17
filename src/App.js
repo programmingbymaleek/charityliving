@@ -4,11 +4,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css'
 import "./index.css"
 
-import Homepage from './Homepage1/Homepage';
+import Homepage from './Components/Homepage';
 import { GlobalStyles } from './StyledComponents/GlobalStyles';
 import { Context } from './Utilities/Context';
 
-const Signin = lazy(() => import('./SigninPage/Signin'));
+const Signin = lazy(() => import('./Components/Signin'));
+const Givepage = lazy(() => import('./Components/Givepage'))
 
 function App() {
 
@@ -35,6 +36,11 @@ function App() {
               <Route exact path='/signin' element={
                 <Suspense fallback={<div>Loading...</div>}>
                   <Signin />
+                </Suspense>
+              } />
+              <Route exact path='/givepage' element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <Givepage />
                 </Suspense>
               } />
             </Routes>

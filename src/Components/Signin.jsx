@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
 
-import Footer from '../Homepage1/Footer'
-import Navbar from '../Homepage1/Navbar'
+import Footer from '../GlobalComponents/Footer'
+import Navbar from '../GlobalComponents/Navbar'
 import { Context } from '../Utilities/Context'
-import Form from '../Utilities/Form'
+import Form from '../GlobalComponents/Form'
 
 import dummy2 from "../assets/food2.jpg"
 
-import "./Signin.scss"
+import "../styles/Signin.scss"
 
 const Signin = () => {
     let { setOpenModal, setModalDetails} = useContext(Context)
