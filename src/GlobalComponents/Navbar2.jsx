@@ -28,7 +28,7 @@ const Navbar2 = ({ left, leftscroll, right, rightscroll, signincolor, joincolor,
                     <Link to='/signin' className='pick_user' ><SignInButton scroll={scroll} siginborder={siginborder} siginborderscroll={siginborderscroll} signincolorscroll={signincolorscroll} signincolor={signincolor}>Sign in</SignInButton></Link>
                 </Ul>
             </Rightnav>
-            <Hamburger src={menu} alt='menu' />
+            {/* <Hamburger src={menu} alt='menu' /> */}
 
         </Navdiv>
     </div>
@@ -54,6 +54,8 @@ const Navdiv = styled.div`
     font-size: .7rem;
     position: fixed;
     z-index: 1000;
+    left: 0;
+    box-sizing: border-box;
 
     @media screen and (max-width: 1086px) {
         padding: 0 5%
@@ -64,10 +66,7 @@ const Leftnav = styled.div`
     display: flex;
     flex-direction: row;
     width: fit-content;
-    gap: 2rem;
     color: ${props => (props.scroll ? props => props.leftscroll : props.left)};
-    align-items: center;
-    justify-content: center;
 `
 const Rightnav = styled.div`
     display: flex;
@@ -92,54 +91,14 @@ const Ul = styled.ul`
     }
 `
 
-const Button = styled.li`
-  background: transparent;
-  border-radius: 3px;
-  border: 1px solid ${props => props.color};
-  color: ${props => (props.scroll ? "black" : props => props.color)};
-  padding: 0.5rem 1.5rem;
-
-  @media screen and (max-width: 850px) {
-        display: none;
-
-    }
-`
-
-const ButtonJoin = styled.li`
-  background: ${props => props.joinbackground};
-  border-radius: 3px;
-  border: 1px solid ${props => (props.scroll ? props => props.joinborderscroll : props.joinborder)};
-  color: ${props => (props.scroll ? props => props.joincolorscroll : props.joincolor)};
-  padding: 0.5rem 1.5rem;
-
-  @media screen and (max-width: 850px) {
-    display: none;
-}
-`
-// pop up
-// email
-// password
-// signin button with email and passsword
-
-// create account or signin
-// create account with google name, password, confirm, email(popup)
-
-const SelectField = styled.select`
-  background: transparent;
-  border: none;
-  color: inherit;
-  text-transform: uppercase
-`
-
 const SignInButton = styled.li`
-    border-left: 1px solid ${props => (props.scroll ? props => props.siginborderscroll : props.siginborder)};
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     color: ${props => (props.scroll ? props => props.signincolorscroll : props.signincolor)};
     padding: 0.5rem 0 0.5rem 2rem;
-    text-decoration: none;
+    text-decoration: none!important;
 `
 
 const Hamburger = styled.img`

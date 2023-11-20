@@ -1,36 +1,28 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 import Footer from '../GlobalComponents/Footer'
 import Navbar from '../GlobalComponents/Navbar'
-import { Context } from '../Utilities/Context'
 import Form from '../GlobalComponents/Form'
+import FooterForm from '../GlobalComponents/FooterForm'
+import { Context } from '../Utilities/Context'
+import jsonStyles from '../Utilities/styles.json'
 
 import dummy2 from "../assets/food2.jpg"
 
 import "../styles/Signin.scss"
 
 const Signin = () => {
-    let { setOpenModal, setModalDetails} = useContext(Context)
+    let { setOpenModal, setModalDetails } = useContext(Context)
 
-    // styles
-    const style = {
-        left: "black",
-        right: "black",
-        siginborder: "black",
-        joincolor: "white",
-        signincolor: "black",
-        joinborder: "transparent",
-        joinbackground: "#0C3763",
-        the_scroll: 120,
+    const [siginInStylesData, setSiginInStylesData] = useState({});
 
-        leftscroll: "white",
-        rightscroll: "white",
-        signinscroll: "white",
-        joincolorscroll: "white",
-        joinborderscroll: "transparent",
-        signincolorscroll: "white",
-        siginborderscroll: "white",
-    }
+    useEffect(() => {
+        setSiginInStylesData(jsonStyles.Signin[0].nav[0])
+    }, []);
+
+    useEffect(() => {
+        console.log(siginInStylesData)
+    }, [siginInStylesData]);
 
     //modal form details
     const createAccountDets = {
@@ -80,7 +72,11 @@ const Signin = () => {
 
     return (
         <div className='sigin_page'>
-            <Navbar {...style} />
+            {
+                Object.keys(siginInStylesData).length !== 0 ? (
+                    <Navbar the_styles={siginInStylesData} />
+                ) : (<span>Loading...</span>)
+            }
             <div className='signin_container'>
                 <div className='signin_header'>
                     <div className='signin_big_heading'>Sign into your account</div>
@@ -112,9 +108,9 @@ const Signin = () => {
                         <hr />
                     </div>
                     <input type="submit" value="Sign in with google" className='facebook_signin' />
-                    <input type="submit" value="Sign in with email and passsword" className='email_signin' onClick={()=>openTheModal(signinDets)}/>
+                    <input type="submit" value="Sign in with email and passsword" className='email_signin' onClick={() => openTheModal(signinDets)} />
                     <div className='other_signin_options'>
-                        <span className='forgot_password' onClick={()=>openTheModal(createAccountDets)}>Create an account?</span>
+                        <span className='forgot_password' onClick={() => openTheModal(createAccountDets)}>Create an account?</span>
                         <span className='form_create_account'>Sign in</span>
                     </div>
                 </div>
@@ -124,8 +120,9 @@ const Signin = () => {
                 <img src={dummy2} alt='signin_image' />
                 <img src={dummy2} alt='signin_image' />
             </div>
-            <Footer />
-            <Form/>
+            <FooterForm backgroundstyle="white" />
+            <Footer backgroundstyle="white" />
+            <Form />
         </div>
     )
 }

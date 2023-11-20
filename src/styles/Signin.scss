@@ -4,7 +4,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #FFFFFF;
+  background: #F7F7F7;
+
   
   .signin_container {
     padding: 10rem 0 5rem;
@@ -12,7 +13,7 @@
     flex-direction: column;
     width: 80%;
     align-items: center;
-
+    
     .signin_header {
       display: flex;
       flex-direction: column;
@@ -194,10 +195,10 @@
   .signin_images{
     display: flex;
     flex-direction: row;
-    height: 25rem;
+    height: 20rem;
     width: 100%;
     justify-content: space-between;
-    padding: 2rem 0 4rem;
+    padding: 2rem 0 0;
 
     @include respond-to('desktop--lg'){
       height: 20rem;
@@ -214,3 +215,4 @@
     width: 70vw;
   }
 }
+

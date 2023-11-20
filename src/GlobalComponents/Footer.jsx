@@ -3,37 +3,10 @@ import styled from 'styled-components'
 import dummy from "../assets/statistics.svg"
 
 
-const Footer = () => {
+const Footer = ({backgroundstyle}) => {
     return (
-        <Thefooter>
+        <Thefooter backgroundstyle= {backgroundstyle}>
             <FooterContainer>
-                <FooterForm >
-                    <FooterText>
-                        <FooterHeading>Add impact to your inbox</FooterHeading>
-                        <div className='footer_email'>Get our emails t stay in the know</div>
-                    </FooterText>
-                    <TheForm>
-                        <MainForm>
-                            <InputBox
-                                type="text"
-                                placeholder='First Name'
-                            />
-                            <InputBox
-                                type="text"
-                                placeholder='Last Name'
-                            />
-                            <InputBox 
-                                type="email"
-                                placeholder='Email'
-                            />
-                            <SubscribeButton type="submit" value="Subscribe" />
-
-                        </MainForm>
-                        <FormNote>
-                            This site is protected by reCAPTCHA and the Google <span className='policy'>Privacy Policy</span> and <span className='policy'>Terms of Service</span> apply.
-                        </FormNote>
-                    </TheForm>
-                </FooterForm>
                 <ListContainer>
                     <Lists>
                         <ListHeading>take action</ListHeading>
@@ -122,93 +95,33 @@ export default Footer
 const Thefooter = styled.div`
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     font-size: .9rem;
+    padding: 0 10%;
+    background: ${props => (props.backgroundstyle ? props.backgroundstyle : 'inherit')};
 
-    @media screen and (max-width: 1086px) {
-        width: 90%;
-     }
-     @media screen and (max-width: 768px) {
+    @media screen and (min-width: 1440px) {
+        padding: 0 15vw;
+        font-size: 1rem;
+    }
+
+    @media screen and (max-width: 1439px) {
+        padding: 0 10%;
+    }
+
+    @media screen and (max-width: 768px) {
         font-size: .8rem;
-      }
+        padding: 0 5%;
+    }
+
+    @media screen and (max-width: 320px) {
+        font-size: .7rem;
+    }
 `
 const FooterContainer = styled.div`
     width: 100%;
-`
-const FooterForm = styled.div`
-    display: flex;
-    flex-direction: row;
-    padding: 2rem 1.5rem;
-    box-sizing: border-box;
-    background-color: #F7F7F7;
-    border: 1px solid #E3E5E5;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between;
-
-    @media screen and (max-width: 1086px) {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: .8rem;
-     }
-`
-const FooterText = styled.div`
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    width: 30%;
-    @media screen and (max-width: 1086px) {
-        width: 100%
-     }
-`
-const FooterHeading = styled.div`
-    font-size: .9rem;
-    font-weight: 600;
-    @media screen and (max-width: 768px) {
-        font-size: .8rem;
-      }
-`
-const TheForm = styled.div`
-    display: flex;
-    flex-direction: column;
-`
-const MainForm = styled.div`
-    display: flex;
-    flex-direction: row;
-`
-const InputBox = styled.input`
-    height: 2.5rem;
-    padding: 0 1rem;
-    background: white;
-    border: 1px solid #E3E5E5;
-    border-right: 0;
-    color: grey;
-    width: 11rem;
-
-    @media screen and (max-width: 1086px) {
-        width: 31%
-     }
-`
-const SubscribeButton = styled.input`
-    height: 2.5rem;
-    padding: 0 1rem;
-    background: #0C3763;
-    text-transform: uppercase;
-    color: white;
-    font-weight: 600;
-    width: fit-content;
-    border: none;
-`
-
-const FormNote = styled.div`
-    font-size: .8rem;
-    padding: .5rem 0;
-    color: grey;
-    @media screen and (max-width: 768px) {
-        font-size: .7rem;
-      }
 `
 
 const Lists = styled.ul`
@@ -217,6 +130,13 @@ const Lists = styled.ul`
     display: flex;
     flex-direction: column;
     gap: .3rem;
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
 `
 
 const ListContainer = styled.div`
@@ -224,13 +144,25 @@ const ListContainer = styled.div`
     flex-direction: row;
     justify-content: space-between;
     padding: 1rem 0;
+
+    @media screen and (max-width: 768px) {
+        flex-wrap: wrap;
+      }
 `
 
 const ListHeading = styled.li`
     font-weight: 600;
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+      }
 `
 const ListItem = styled.li`
     color: grey;
+
+    @media screen and (max-width: 768px) {
+        width: 45%;
+      }
 `
 const SocialsDiv = styled.div`
     display: flex;
@@ -238,19 +170,36 @@ const SocialsDiv = styled.div`
     padding: 1.5rem 0 .8rem;
     justify-content: space-between;
     align-items: center;
+
+    @media screen and (max-width: 320px) {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 1rem
+    }
 `
 const SocialsLeft = styled.div`
     display: flex;
     flex-direction: column;
     gap: .6rem;
+
+    @media screen and (max-width: 320px) {
+        width: 100%;
+    }
 `
 const TheSocials = styled.div`
     display: flex;
     flex-direction: row;
     gap: 1rem;
+    @media screen and (max-width: 768px) {
+        gap: .5rem!important;
+    }
 `
 const SocialsIcon = styled.img`
     width: 1.5rem;
+
+    @media screen and (max-width: 768px) {
+        width: 1rem;
+    }
 `
 const SelectCountry = styled.select`
     width: 25%;
@@ -259,6 +208,15 @@ const SelectCountry = styled.select`
     background: white;
     border: 2px solid #E3E5E5;
     color: grey;
+
+    @media screen and (max-width: 768px) {
+        width: 30%;
+    }
+
+    @media screen and (max-width: 320px) {
+        height: 2rem;
+        width: 50%;
+    }
 `
 const Dot = styled.span`
     font-size: 2rem;
@@ -266,6 +224,10 @@ const Dot = styled.span`
     @media screen and (max-width: 768px) {
         font-size: 1.8rem;
       }
+
+      @media screen and (max-width: 320px) {
+        font-size: 1.5rem;
+    }
 `
 const EmailLink = styled.span`
     font-weight: 600;
@@ -279,21 +241,39 @@ const FooterCharity = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
     @media screen and (max-width: 768px) {
         font-size: .7rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .5rem;
       }
+
+      @media screen and (max-width: 320px) {
+        font-size: .6rem;
+    }
 `
 const CharityText = styled.div`
     display: flex;
     flex-direction: column;
+
+
 `
 const CharityIcons = styled.div`
     display: flex;
     flex-direction: row;
     gap: 1rem;
+
+    @media screen and (max-width: 768px) {
+        gap: .5rem!important;
+    }
 `
 const CharityIcon = styled.img`
     width: 2rem;
+
+    @media screen and (max-width: 768px) {
+        width: 1.5rem;
+      }
 `
 const CharityExp = styled.div`
     color: grey;
@@ -302,4 +282,8 @@ const CharityExp = styled.div`
     @media screen and (max-width: 768px) {
         font-size: .7rem;
       }
+
+      @media screen and (max-width: 320px) {
+        font-size: .6rem;
+    }
 `

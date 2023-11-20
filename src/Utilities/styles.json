@@ -1,0 +1,50 @@
+{
+  "Homepage": [
+    {
+      "nav": [
+        {
+          "left": "white",
+          "right": "white",
+          "siginborder": "white",
+          "joincolor": "white",
+          "signincolor": "white",
+          "joinborder": "white",
+          "joinbackground": "transparent",
+          "the_scroll": 80,
+
+          "leftscroll": "white",
+          "rightscroll": "white",
+          "signinscroll": "white",
+          "joincolorscroll": "white",
+          "joinborderscroll": "white",
+          "signincolorscroll": "white",
+          "siginborderscroll": "white"
+        }
+      ]
+    }
+  ],
+  "Signin": [
+    {
+      "nav": [
+        {
+          "left": "black",
+          "right": "black",
+          "siginborder": "black",
+          "joincolor": "white",
+          "signincolor": "black",
+          "joinborder": "transparent",
+          "joinbackground": "#0C3763",
+          "the_scroll": 120,
+
+          "leftscroll": "white",
+          "rightscroll": "white",
+          "signinscroll": "white",
+          "joincolorscroll": "white",
+          "joinborderscroll": "transparent",
+          "signincolorscroll": "white",
+          "siginborderscroll": "white"
+        }
+      ]
+    }
+  ]
+}

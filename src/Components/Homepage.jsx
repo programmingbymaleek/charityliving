@@ -1,35 +1,32 @@
-import React from 'react'
+import React, {useState, useEffect, useContext} from 'react'
+
 import Navbar from '../GlobalComponents/Navbar'
-import '../styles/Homepage.scss'
-import dummy from "../assets/statistics.svg"
-import dummy2 from "../assets/food2.jpg"
 import Footer from '../GlobalComponents/Footer'
 import GiveForm from '../GlobalComponents/GiveForm'
+import FooterForm from '../GlobalComponents/FooterForm'
+import jsonStyles from '../Utilities/styles.json'
+import { Context } from '../Utilities/Context'
 
+import '../styles/Homepage.scss'
+
+import dummy from "../assets/statistics.svg"
+import dummy2 from "../assets/food2.jpg"
 
 const Homepage = () => {
-  const style = {
-    left: "white", 
-    right: "white", 
-    siginborder: "white",
-    joincolor: "white",
-    signincolor: "white", 
-    joinborder: "white",
-    joinbackground: "transparent",
-    the_scroll: 80,
 
-    leftscroll: "white",
-    rightscroll: "white",
-    signinscroll: "white",
-    joincolorscroll: "white",
-    joinborderscroll: "white",
-    signincolorscroll: "white", 
-    siginborderscroll: "white",
-}
+  let { navStyleObject, setNavStyleObject} = useContext(Context)
+
+  const [myStylesData, setMyStylesData] = useState({});
+
+  useEffect(() => {
+    setNavStyleObject(jsonStyles.Homepage[0].nav[0])
+  }, []);
+  
+
   return (
     <div className='homepage1'>
       <div className="homepage_header">
-        <Navbar {...style}/>
+            <Navbar/>
         <div className="home_head_section">
           <div className="left_head">
             <div className="the_head">
@@ -43,7 +40,7 @@ const Homepage = () => {
               to families around the world
             </div>
           </div>
-          <GiveForm/>
+          <GiveForm />
         </div>
       </div>
       <div className="our_work_section">
@@ -194,7 +191,8 @@ const Homepage = () => {
           </div>
         </div>
       </div>
-      <Footer/>
+      <FooterForm/>
+      <Footer />
     </div>
   );
 };

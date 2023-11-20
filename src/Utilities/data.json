@@ -1,0 +1,50 @@
+{
+    "GivePage": [
+      {
+        "ways_to_give": [
+            {
+                "img": "#",
+                "title": "sponsor a water project",
+                "body": "transform an entire community or school with a gift of $10,000 or more",
+                "link_text": "learn more",
+                "link": "#"
+            },
+            {
+                "img": "#",
+                "title": "honor someoone special",
+                "body": "honor or remember someone special by making a gift in their name",
+                "link_text": "give in honor of someone",
+                "link": "#"
+            },
+            {
+                "img": "#",
+                "title": "legacy giving",
+                "body": "join us in shaping the future and making clean water a part of your lasting legacy",
+                "link_text": "learn more",
+                "link": "#"
+            },
+            {
+                "img": "#",
+                "title": "give by check or stock",
+                "body": "we also accept donations by check, stock, money order, and wire transfer",
+                "link_text": "learn more",
+                "link": "#"
+            },
+            {
+                "img": "#",
+                "title": "donate with cryptocurrency",
+                "body": "we currently accept bitcoin, ether, litecoin, bitcoin cash, Zcash, filecoin, and dogecoin",
+                "link_text": "learn more",
+                "link": "#"
+            },
+            {
+                "img": "#",
+                "title": "give to the bitcoin water trust",
+                "body": "our exponential growth fund will hold all donated bitcoins unrtil at least 2025",
+                "link_text": "learn more",
+                "link": "#"
+            }
+        ]
+      }
+    ]
+   }

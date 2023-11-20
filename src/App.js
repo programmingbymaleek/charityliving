@@ -15,15 +15,18 @@ function App() {
 
   let [openModal, setOpenModal,] = useState(false)
   let [modalDetails, setModalDetails] = useState({})
+  let [navStyleObject, setNavStyleObject] = useState({})
 
 
   let providerValue = useMemo(() => ({ 
       openModal, setOpenModal,
-      modalDetails, setModalDetails
+      modalDetails, setModalDetails,
+      navStyleObject, setNavStyleObject,
     }), 
     [
       openModal, setOpenModal,     
-      modalDetails, setModalDetails
+      modalDetails, setModalDetails,
+      navStyleObject, setNavStyleObject,
     ])
 
   return (
