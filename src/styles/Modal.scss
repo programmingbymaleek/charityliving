@@ -1,3 +1,5 @@
+@import "./breakpoints";
+
 .overlay {
   background: black;
   height: 100vh;
@@ -29,6 +31,11 @@
         width: 1.7rem;
         border-radius: 50px;
         padding: .3rem;
+
+        @include respond-to("mobile") {
+          padding: 0;
+          width: 1rem;
+        }
     }
     .close_icon:hover{
         background: rgba(0, 0, 255, 0.152);
@@ -41,7 +48,7 @@
   .signin_email_container {
     background: white;
     padding: .9rem;
-    width: 45%;
+    width: 39rem;
 
     label {
       display: flex;
@@ -72,8 +79,62 @@
         font-weight: 600;
         cursor: pointer;
     }
+
+    @include respond-to("tablet") {
+      width: 33rem;
+
+      label {
+        font-size: 0.7rem;
+      }
+      input {
+        font-size: .7rem;
+      }
+    }
+
+    @include respond-to("mobile") {
+      label {
+        font-size: 0.6rem;
+        margin: .5rem 0;
+      }
+      input {
+        font-size: .6rem;
+      }
+    }
+  }
+
+  @include respond-to("tablet") {
+    .modal_header {
+      font-size: 1.5rem;
+    }
+  }
+  @include respond-to("mobile") {
+    .modal_header {
+      font-size: 1.3rem;
+      padding: 0!important;
+    }
+    .modal_form{
+      padding: 0!important;
+    }
   }
 }
 .open_modal{
     display: flex;
+}
+
+@media screen and (min-width: 1440px) {
+  .signin_email_container {
+    width: 45rem!important;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .signin_email_container {
+    width: 90%!important;
+  }
+  .modal_form{
+    padding: 0 .6rem .6rem!important;
+  }
+  .modal_header {
+    padding: 0 .6rem !important;
+  }
 }
