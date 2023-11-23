@@ -87,10 +87,14 @@ export default GiveForm
 
 const GiveContainer = styled.div`
     max-width: 35rem;
-    width: 40%; 
+    width: 25rem; 
     display: flex;
     flex-direction: column;
     gap: 1rem;
+
+    @media screen and (min-width: 1440px) {
+          width: 35rem;
+      }
 
     @media screen and (max-width: 1100px) {
         width: 50%;

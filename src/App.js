@@ -9,7 +9,8 @@ import { GlobalStyles } from './StyledComponents/GlobalStyles';
 import { Context } from './Utilities/Context';
 
 const Signin = lazy(() => import('./Components/Signin'));
-const Givepage = lazy(() => import('./Components/Givepage'))
+const Givepage = lazy(() => import('./Components/Givepage'));
+const JoinSprings = lazy(() => import('./Components/JoinTheSpringspage'));
 
 function App() {
 
@@ -44,6 +45,11 @@ function App() {
               <Route exact path='/givepage' element={
                 <Suspense fallback={<div>Loading...</div>}>
                   <Givepage />
+                </Suspense>
+              } />
+              <Route exact path='/joinspring' element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <JoinSprings />
                 </Suspense>
               } />
             </Routes>
