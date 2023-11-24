@@ -114,7 +114,9 @@ const JoinTheSpringspage = () => {
             That's the power of your generosity.
           </div>
         </div>
-        <div className="the_video"></div>
+        <div className="the_video">
+          <img src={dummy2} alt="video replacement"/>
+        </div>
       </div>
 
       <div className="meet_us_section">
@@ -130,7 +132,7 @@ const JoinTheSpringspage = () => {
         </div>
         <div className="our_quotes">
           <div className="each_quote">
-            <img alt="quote picture" />
+            <img src={dummy2} className="quote_picture" alt="quote picture" />
             <div className="the_quote">
               "I used to have monthly subscriptions with several different
               companies. But then the makeup, tote bags, and international
@@ -140,7 +142,7 @@ const JoinTheSpringspage = () => {
             <div className="quote_name">Cindy Agoncillo</div>
           </div>
           <div className="each_quote">
-            <img alt="quote picture" />
+            <img src={dummy2} className="quote_picture" alt="quote picture" />
             <div className="the_quote">
               "The Spring isn't just a subscription. It's a community of
               passionate investors. Being part of The Spring makes me hopefu
@@ -150,7 +152,7 @@ const JoinTheSpringspage = () => {
             <div className="quote_name">Krupa Patel </div>
           </div>
           <div className="each_quote">
-            <img alt="quote picture" />
+            <img src={dummy2} className="quote_picture" alt="quote picture" />
             <div className="the_quote">
               "I'm currently an environmental engineer working on impproving New
               York City's water and wastewater resources. Water is something
@@ -161,7 +163,7 @@ const JoinTheSpringspage = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer backgroundstyle="white"/>
     </div>
   );
 };

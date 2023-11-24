@@ -14,6 +14,7 @@
     align-items: center;
     gap: 8rem;
     justify-content: center;
+    width: 100%;
     background: #dbe4e9;
 
     .join_the_springs_section {
@@ -91,57 +92,169 @@
       }
     }
   }
-  
-  .imacted_countries{
+
+  .imacted_countries {
     width: 100%;
     padding-bottom: 5rem;
-    
-    .impacted_container{
+
+    .impacted_container {
       display: flex;
       flex-direction: column;
       width: 35%;
       border: 1px solid #e3e5e5;
       background: white;
-      font-size: .9rem;
+      font-size: 0.9rem;
       margin-left: 8rem;
 
-      .impact_text{
+      .impact_text {
         padding: 2rem;
         text-align: center;
       }
 
-      .imapct_heading{
-        font-size: .8rem;
+      .imapct_heading {
+        font-size: 0.8rem;
         text-transform: uppercase;
         border: 1px solid #e3e5e5;
         border-left: 0;
         border-right: 0;
-        padding: .5rem 1rem;
+        padding: 0.5rem 1rem;
         background: #06060610;
         color: grey;
       }
     }
   }
 
-  .video_section{
+  .video_section {
     width: 100%;
     background: white;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    padding: 5rem 0;
+    gap: 5rem;
 
-    .video_text_Section{
-      width: 35%;
+    .video_text_Section {
+      width: 38%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
     }
-    .the_video{
-      width: 30%;
+    .the_video {
+      width: 35%;
+
+      img {
+        width: 100%;
+        height: 15rem;
+      }
+    }
+    .video_heading {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 2rem;
+    }
+    .video_text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+
+  .meet_us_section {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    padding: 1rem 0 3rem;
+    border-bottom: 1px solid #e3e5e5;
+
+    .meet_us_intro {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+
+      .meet_us_head {
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-align: center;
+        line-height: 2rem;
+      }
+
+      .meet_us_text {
+        font-size: 0.9rem;
+        text-align: center;
+        color: grey;
+        width: 45%;
+      }
+    }
+    .our_quotes{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+      width: 80%;
+      color: grey;
+      padding: 5rem 0 1rem;
+
+      .each_quote{
+        display: flex;
+        flex-direction: column;
+        width: 33%;
+        font-size: .9rem;
+        padding: 0 1rem 1rem;
+        border: 1px solid #e3e5e5;
+        border-radius: 5px;
+        align-items: center;
+
+      }
     }
   }
 }
 
+.quote_picture{
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50px;
+  position: relative;
+  display: block;
+  top: -40px;
+}
 @media screen and (min-width: 1440px) {
   .join_the_springs_section {
     width: 35rem !important;
+  }
+  .our_quotes{
+    padding: 0 15vw!important;
+    width: 100%!important;
+    padding-top: 4rem!important;
+  }
+  .quote_picture{
+    height: 5rem!important;
+    width: 5rem!important;
+  }
+  .the_video {
+    width: 40rem!important;
+
+    img{
+      height: 20rem!important;
+    }
+  }
+  .video_text_Section {
+    width: 40rem!important;
+  }
+  .impacted_container{
+    width: 35rem!important;
+    margin-left: 12rem!important;
+  }
+  .join_the_springs_info {
+    width: 48rem!important;
+  }
+  .video_section {
+    width: 100%;
+    padding: 5rem 15vw!important;
+    justify-content: space-between!important;
   }
 }
