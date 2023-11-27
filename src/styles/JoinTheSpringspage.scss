@@ -210,6 +210,11 @@
         align-items: center;
 
       }
+
+      .the_quote{
+        position: relative;
+        top: -1.5rem;
+      }
     }
   }
 }
@@ -256,5 +261,17 @@
     width: 100%;
     padding: 5rem 15vw!important;
     justify-content: space-between!important;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .join_the_springs_left {
+    width: 80%!important;
+  }
+  .image_side {
+    width: 30%!important;
+  }
+  .join_the_springs .join_the_springs_header{
+    gap: 3rem;
   }
 }
